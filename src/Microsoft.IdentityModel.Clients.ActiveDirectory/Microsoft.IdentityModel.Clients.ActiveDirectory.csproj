@@ -1,7 +1,7 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;netstandard1.3;uap10.0;MonoAndroid8.1;Xamarin.iOS10</TargetFrameworks>
+    <TargetFrameworks>net45;netstandard1.3;uap10.0;MonoAndroid9.0;Xamarin.iOS10</TargetFrameworks>
     <Product>Microsoft.IdentityModel.Clients.ActiveDirectory ($(TargetFramework))</Product>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\build\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
@@ -56,7 +56,7 @@
     <!-- These are for MSAL json/* build infra -->
     <DefineConstants>$(DefineConstants);PORTABLE;DOTNET;HAVE_ASYNC;HAVE_BIG_INTEGER;HAVE_COVARIANT_GENERICS;HAVE_DATA_CONTRACTS;HAVE_DATE_TIME_OFFSET;HAVE_FSHARP_TYPES;HAVE_GUID_TRY_PARSE;HAVE_HASH_SET;HAVE_IGNORE_DATA_MEMBER_ATTRIBUTE;HAVE_INOTIFY_COLLECTION_CHANGED;HAVE_INOTIFY_PROPERTY_CHANGING;HAVE_ISET;HAVE_LINQ;HAVE_METHOD_IMPL_ATTRIBUTE;HAVE_NON_SERIALIZED_ATTRIBUTE;HAVE_READ_ONLY_COLLECTIONS;HAVE_REFLECTION_BINDER;HAVE_SERIALIZATION_BINDER_BIND_TO_NAME;HAVE_STRING_JOIN_WITH_ENUMERABLE;HAVE_TIME_SPAN_PARSE_WITH_CULTURE;HAVE_TIME_SPAN_TO_STRING_WITH_CULTURE;HAVE_TIME_ZONE_INFO;HAVE_UNICODE_SURROGATE_DETECTION;HAVE_VARIANT_TYPE_PARAMETERS;HAVE_VERSION_TRY_PARSE;HAVE_OBSOLETE_FORMATTER_ASSEMBLY_STYLE;HAVE_CONCURRENT_DICTIONARY;HAVE_ICONVERTIBLE;$(AdditionalConstants)</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' == 'MonoAndroid8.1'">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'MonoAndroid9.0'">
     <DefineConstants>$(DefineConstants);ANDROID</DefineConstants>
     <NoWarn>$(NoWarn);CS8002</NoWarn>
     <CodeAnalysisAdditionalOptions>/assemblyCompareMode:StrongNameIgnoringVersion</CodeAnalysisAdditionalOptions>
@@ -156,7 +156,7 @@
     <Compile Include="Platforms\iOS\**\*.cs" />
     <Compile Include="Features\NonWinCommon\**\*.cs" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'MonoAndroid8.1' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'MonoAndroid9.0' ">
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.IdentityModel" />
@@ -165,8 +165,8 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
-    <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="27.0.2.1" />
-    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.AndroidX.Browser" Version="1.1.0-preview06" />
+    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.1.0-preview06" />
     <Compile Include="Platforms\android\**\*.cs" />
     <Compile Include="Features\NonWinCommon\**\*.cs" />
   </ItemGroup>

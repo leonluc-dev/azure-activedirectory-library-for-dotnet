@@ -32,7 +32,7 @@ using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using Android.Support.CustomTabs;
+using AndroidX.Browser.CustomTabs;
 using Microsoft.Identity.Core.OAuth2;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Uri = Android.Net.Uri;
@@ -54,7 +54,7 @@ namespace Microsoft.Identity.Core.UI.SystemWebview
         { }
 
         private readonly string _customTabsServiceAction =
-            "android.support.customtabs.action.CustomTabsService";
+            "androidx.browser.customtabs.CustomTabsService";
 
         private string _requestUrl;
         private int _requestId;
